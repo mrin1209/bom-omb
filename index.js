@@ -38,5 +38,5 @@ var server = http.createServer((req, res) => {
 
 var port = 8000;
 server.listen(port, () => {
-  console.log(`Server listening on ${port}`);
+  console.log(`http://localhost:${port}`);
 });
