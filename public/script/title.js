@@ -4,7 +4,7 @@ class Title {
   }
 
   view() {
-    image(this.titleImg, 0, 0)
+    image(this.titleImg, 0, 0, 390, 844);
   }
 }
 

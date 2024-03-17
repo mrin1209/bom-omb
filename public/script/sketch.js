@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight); // キャンバスを描画
+  createCanvas(390, 844); // キャンバスを描画
 
   title.setup();
 }
