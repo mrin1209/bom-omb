@@ -1,3 +1,22 @@
 body {
   overflow: hidden;
+  user-select: none;
+}
+
+.titleScreen {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.titleMenu {
+  margin-top: 50px;
+}
+
+.titleMenu li.selected::before {
+  content: ">>";
+  position: absolute;
+  left: -50px;
 }

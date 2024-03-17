@@ -9,9 +9,28 @@
   <link rel="apple-touch-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="style/destyle.css">
   <link rel="stylesheet" href="style/base.css">
-  <title>Bom surveillance late at night</title>
+  <title>Bomb surveillance late at night</title>
 </head>
 <body onCopy="return false;" oncontextmenu="return false;">
+  <!-- タップ判定のあるボタンはHTMLで設計しjavascriptで表示を切り替える -->
+  <section id="titleScreen">
+    <div class="titleScreen">
+      <h1 class="gameTitle">
+        Bomb<br>
+        Surveillance<br>
+        Late at Night
+      </h1>
+      <ul class="titleMenu">
+        <li class="selected">
+          NEW GAME
+        </li>
+
+        <li>
+          コンテニュー
+        </li>
+      </ul>
+    </div>
+  </section>
   <script src="script/lib/p5.min.js"></script>
   <script src="script/game.js"></script>
   <script src="script/title.js"></script>

@@ -10,6 +10,10 @@ class Game {
   get getGameFlow() {
     return this.#gameFlow;
   }
+
+  setGameFlow(val) {
+    this.#gameFlow = val;
+  }
 }
 
 const game = new Game();
