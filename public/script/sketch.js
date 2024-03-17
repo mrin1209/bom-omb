@@ -1,9 +1,7 @@
-function preload() {
-  title.preload();
-}
-
 function setup() {
-  createCanvas(390, 844); // キャンバスを描画
+  createCanvas(windowWidth, windowHeight); // キャンバスを描画
+
+  title.setup();
 }
 
 function draw() {
