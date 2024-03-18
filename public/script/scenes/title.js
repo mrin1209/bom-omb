@@ -1,14 +1,36 @@
-class Title {
-  setup() {
+class Title extends Default {
+  // 画像読み込み
+  preload() {
     this.titleImg = loadImage("../img/title.jpg");
-
-    this.controller();
   }
 
+  setup() {
+    this.changeScreen = 0;
+    this.fadeout = 0;
+  }
+
+  // シーン描画時に実行
   view() {
-    image(this.titleImg, 0, 0, windowWidth, windowHeight);
+    switch (this.changeScreen) {
+      case 0:
+        image(this.titleImg, 0, 0, windowWidth, windowHeight);
+        break;
+      case 1:
+        fill(0,0,0,20);
+        rect(0, 0, windowWidth, windowHeight);
+        this.fadeout+=1;
+        console.log(this.fadeout);
+        if (this.fadeout >= 50) {
+          this.changeScreen = 2;
+        }
+        break;
+      case 2:
+        scene.change("story");
+        break;
+    }
   }
 
+  // 画面操作
   controller() {
     const titleMenu = Array.from(document.querySelectorAll(".titleMenu li")); // タイトルメニューのリスト
     let currentMenu = 0; // 選択中のメニュー
@@ -21,8 +43,7 @@ class Title {
         if (currentMenu === index) { // 選択中のメニューを再度クリックしたら
           switch (currentMenu) {
             case 0:
-              console.log("new game");
-              game.setGameFlow("story");
+              this.changeScreen = 1;
               break;
             case 1:
               console.log("コンテニュー");
@@ -46,5 +67,3 @@ class Title {
     });
   }
 }
-
-const title = new Title();

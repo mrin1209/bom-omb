@@ -1,19 +1,8 @@
 function setup() {
   createCanvas(windowWidth, windowHeight); // キャンバスを描画
-
-  title.setup();
+  scene.setup("title");
 }
 
 function draw() {
-  console.log(game.getGameFlow);
-  switch (game.getGameFlow) {
-    case 'title':
-      title.view();
-      break;
-    case 'story':
-      destroy();
-      break;
-    default:
-      break;
-  }
+  scene.view();
 }
