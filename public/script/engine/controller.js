@@ -16,11 +16,11 @@ class Controller {
     if (mouseIsPressed) {
       this.clicked = true;
 
-      this.pressList.forEach(val => {
-        stroke(100, 255, 100);
-        noFill();
-        rect(val.x, val.y, val.w, val.h);
-      });
+      // this.pressList.forEach(val => {
+      //   stroke(100, 255, 100);
+      //   noFill();
+      //   rect(val.x, val.y, val.w, val.h);
+      // });
     } else {
       this.clicked = false;
     }
