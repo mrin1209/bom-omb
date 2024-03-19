@@ -12,30 +12,12 @@
   <title>Bomb surveillance late at night</title>
 </head>
 <body onCopy="return false;" oncontextmenu="return false;">
-  <!-- タップ判定のあるボタンはHTMLで設計しjavascriptで表示を切り替える -->
-  <section id="titleScreen">
-    <div class="titleScreen">
-      <h1 class="gameTitle">
-        Bomb<br>
-        Surveillance<br>
-        Late at Night
-      </h1>
-      <ul class="titleMenu">
-        <li class="selected">
-          NEW GAME
-        </li>
-
-        <li>
-          コンテニュー
-        </li>
-      </ul>
-    </div>
-  </section>
   <script src="script/lib/p5.min.js"></script>
-  <script src="script/default.js"></script>
+  <script src="script/engine/default.js"></script>
   <script src="script/scenes/title.js"></script>
   <script src="script/scenes/story.js"></script>
-  <script src="script/scene.js"></script>
+  <script src="script/engine/controller.js"></script>
+  <script src="script/engine/scene.js"></script>
   <script src="script/sketch.js"></script>
 </body>
 </html>

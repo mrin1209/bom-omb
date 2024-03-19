@@ -1,15 +1,21 @@
 class Story extends Default {
   // 画像読み込み
-  preload() {}
+  preload() {
+    this.storyImg = loadImage("../img/story.jpg");
+  }
 
   // シーン初期化時に実行
-  setup() {}
+  setup() {
+    this.rotate = 0;
+    this.scale = 1;
+    this.x = 1;
+  }
 
   // シーン描画時に実行
-  view() {}
+  view() {
+    image(this.storyImg, 0, 0);
 
-  // シーン終了
-  destroy() {}
+  }
 
   // 画面操作
   controller() {}
