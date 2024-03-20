@@ -1,4 +1,5 @@
 const scene = new Scene();
+const shader = new Shader();
 const controller = new Controller();
 
 function setup() {

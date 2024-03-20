@@ -9,9 +9,7 @@ class Default {
   view() {}
 
   // シーン終了
-  destroy() {
-    clear();
-  }
+  destroy() {}
 
   // 画面操作
   controller() {}

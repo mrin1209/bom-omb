@@ -22,8 +22,9 @@ class Scene {
 
   // シーン終了
   destroy() {
-    this.scene.destroy();
     controller.reset();
+    shader.reset();
+    this.scene.destroy();
   }
 
   // シーン初期化
