@@ -7,6 +7,10 @@ class Title extends Default {
   setup() {
     this.changeScreen = 0; // タイトル画面の状態
     this.currentMenu = 0; // 現在のカーソル位置
+
+    // メニューのタッチ判定を追加
+    controller.press(this,this.newGame,70,270,180,40);
+    controller.press(this,this.continue,70,345,180,40);
   }
 
   // シーン描画時に実行
@@ -26,13 +30,6 @@ class Title extends Default {
         scene.change("story"); // ストーリー画面へ遷移
         break;
     }
-  }
-
-  // 画面操作
-  controller() {
-    // メニューのタッチ判定を追加
-    controller.press(this,this.newGame,70,270,180,40);
-    controller.press(this,this.continue,70,345,180,40);
   }
 
   // タイトルとメニュー表示

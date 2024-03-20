@@ -1,23 +1,24 @@
 class Shader {
   constructor() {
-    this.fadeCount;
-    this.Setup = false;
+    this.shaderCount;
+    this.shaderSetup = false;
   }
 
-  fadeSetup(fadeCount) {
-    if (this.Setup) {
+  setup(count) {
+    if (this.shaderSetup) {
       return;
     } else {
-      this.fadeCount = fadeCount;
-      this.Setup = true;
+      this.shaderCount = count;
+      this.shaderSetup = true;
     }
   }
 
   fadeout(speed) {
-    this.fadeSetup(0);
-    this.view(this.fadeCount);
-    this.fadeCount+=speed;
-    if (this.fadeCount >= 255) {
+    this.setup(0);
+    fill(0,0,0,this.shaderCount);
+    rect(0, 0, windowWidth, windowHeight);
+    this.shaderCount+=speed;
+    if (this.shaderCount >= 255) {
       return true;
     } else {
       return false;
@@ -25,22 +26,18 @@ class Shader {
   }
 
   fadein(speed) {
-    this.fadeSetup(255);
-    this.view(this.fadeCount);
-    this.fadeCount-=speed;
-    if (this.fadeCount < 0) {
+    this.setup(255);
+    fill(0,0,0,this.shaderCount);
+    rect(0, 0, windowWidth, windowHeight);
+    this.shaderCount-=speed;
+    if (this.shaderCount < 0) {
       return true;
     } else {
       return false;
     }
   }
 
-  view(fadeoutCount) {
-    fill(0,0,0,fadeoutCount);
-    rect(0, 0, windowWidth, windowHeight);
-  }
-
   reset() {
-    this.Setup = false;
+    this.shaderSetup = false;
   }
 }

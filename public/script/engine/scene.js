@@ -4,6 +4,8 @@ class Scene {
     this.sceneList = {
       'title': Title,
       'story': Story,
+      'time': Time,
+      'play': Play,
     };
 
     // 現在のシーン
@@ -32,12 +34,12 @@ class Scene {
     this.scene = new this.sceneList[name]();
     this.scene.preload();
     this.scene.setup();
-    this.scene.controller();
   }
 
   // シーン描画
   view() {
     this.scene.view();
+    this.scene.controller();
     controller.load();
   }
 }
