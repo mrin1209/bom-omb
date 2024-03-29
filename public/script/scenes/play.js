@@ -1,6 +1,6 @@
 class Play extends Default {
   panCount = 0;
-  speed = 2;
+  speed = 0.5;
 
   // 画像読み込み
   preload() {
@@ -10,14 +10,14 @@ class Play extends Default {
   setup() {
     polygon.onPolygon();
     this.cam = createCamera();
-    camera(0, -260, 600);
-    this.cam.tilt(-23);
+    camera(0, -260, 690);
+    this.cam.tilt(-18);
   }
 
   // シーン描画時に実行
   view() {
     background(0);
-    pointLight(255, 255, 0, 0, -450, 0);
+    pointLight(255, 255, 0, 0, -450, -100);
     scale(100);
     model(this.room);
   }
@@ -25,7 +25,6 @@ class Play extends Default {
   controller() {
     if (mouseIsPressed) {
       if (this.clicked) {
-        console.log(this.panCount);
         if (this.pan = this.clickedPosition - mouseX < 0 && this.panCount < 10) {
           this.pan = this.speed;
           this.panCount += this.speed;
@@ -34,9 +33,9 @@ class Play extends Default {
           this.panCount -= this.speed;
         }
         this.cam.pan(this.pan);
+        this.clickedPosition = mouseX;
       } else {
         this.clicked = true;
-        this.clickedPosition = mouseX;
       }
     } else {
       this.clicked = false;

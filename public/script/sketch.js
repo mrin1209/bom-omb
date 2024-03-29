@@ -7,7 +7,7 @@ const game = new Game();
 
 function setup() {
   polygon.offPolygon();
-  scene.setup("title");
+  scene.setup("play");
 }
 
 function draw() {
