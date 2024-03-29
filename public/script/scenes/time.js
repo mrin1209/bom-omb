@@ -8,7 +8,7 @@ class Time extends Default {
 
     setTimeout(() => {
       scene.change("play");
-    }, "2000");
+    }, "3000");
   }
 
   // シーン描画時に実行

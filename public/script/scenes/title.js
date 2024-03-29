@@ -1,7 +1,7 @@
 class Title extends Default {
   // 画像読み込み
   preload() {
-    this.titleImg = loadImage("../img/title.jpg");
+    this.titleImg = loadImage("../asset/img/title.jpg");
   }
 
   setup() {
@@ -9,8 +9,8 @@ class Title extends Default {
     this.currentMenu = 0; // 現在のカーソル位置
 
     // メニューのタッチ判定を追加
-    controller.press(this,this.newGame,70,270,180,40);
-    controller.press(this,this.continue,70,345,180,40);
+    controller.click(() => { this.newGame(); },70,270,180,40); // コールバック関数はthisの参照先が変わるためアロー関数で渡す必要がある
+    controller.click(() => { this.continue(); },70,345,180,40);
   }
 
   // シーン描画時に実行
@@ -27,6 +27,7 @@ class Title extends Default {
         }
         break;
       case 2:
+        fill(255,255,255);
         scene.change("story"); // ストーリー画面へ遷移
         break;
     }
@@ -57,24 +58,24 @@ class Title extends Default {
   }
 
   // ニューゲーム選択時の動作
-  newGame(title) {
-    title.index = 0;
-    if (title.currentMenu === title.index) { // カーソルがニューゲームなら
-      title.changeScreen = 1;
+  newGame() {
+    this.index = 0;
+    if (this.currentMenu === this.index) { // カーソルがニューゲームなら
+      this.changeScreen = 1;
     } else {
        // ニューゲームにカーソルを合わせる
-      title.currentMenu = 0;
+       this.currentMenu = 0;
     }
   }
 
   // コンテニュー選択時の動作
-  continue(title) {
-    title.index = 1;
-    if (title.currentMenu === title.index) { // カーソルがコンテニューなら
+  continue() {
+    this.index = 1;
+    if (this.currentMenu === this.index) { // カーソルがコンテニューなら
       console.log("コンテニュー");
     } else {
       // コンテニューにカーソルを合わせる
-      title.currentMenu = 1;
+      this.currentMenu = 1;
     }
   }
 }

@@ -6,6 +6,7 @@ class Scene {
       'story': Story,
       'time': Time,
       'play': Play,
+      'monitor': Monitor,
     };
 
     // 現在のシーン
@@ -40,6 +41,5 @@ class Scene {
   view() {
     this.scene.view();
     this.scene.controller();
-    controller.load();
   }
 }

@@ -1,7 +1,7 @@
 class Story extends Default {
   // 画像読み込み
   preload() {
-    this.storyImg = loadImage("../img/story.jpg");
+    this.storyImg = loadImage("../asset/img/story.jpg");
   }
 
   // シーン初期化時に実行
@@ -9,21 +9,17 @@ class Story extends Default {
     this.blinkCount = 0;
     this.blinkStatus = 0;
 
-    this.blinkColor = 0,0,0;
-    this.blinkSpeed = 10;
-    this.blinkView = 50;
-    this.blinkHide = 5;
+    this.blinkColor = 255,255,255;
+    this.blinkSpeed = 15;
+    this.blinkView = 30;
+    this.blinkHide = 1;
     this.topBlink = 255;
     this.bottomBlink = 50;
 
     setTimeout(() => {
       this.blinkStatus = 1;
-      controller.click(this,this.viewTime);
-    }, "2000"); 
-  }
-
-  destroy() {
-    // gameクラスに現在時刻を送る
+      controller.click(this.viewTime);
+    }, "1000"); 
   }
   
   // シーン描画時に実行
