@@ -14,6 +14,6 @@ function draw() {
   scene.view(); // タイトルシーン描画
 }
 
-function mouseClicked() {
+function touchStarted() {
   controller.load();
 }
