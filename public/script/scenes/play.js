@@ -1,6 +1,6 @@
 class Play extends Default {
   panCount = 0;
-  speed = 0.5;
+  speed = 0.75;
 
   // 画像読み込み
   preload() {
@@ -33,9 +33,9 @@ class Play extends Default {
           this.panCount -= this.speed;
         }
         this.cam.pan(this.pan);
-        this.clickedPosition = mouseX;
       } else {
         this.clicked = true;
+        this.clickedPosition = mouseX;
       }
     } else {
       this.clicked = false;
